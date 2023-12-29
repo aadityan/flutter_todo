@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         ),
-        home: MyHomePage(),
+        home: HomePage(),
       ),
     );
   }
@@ -29,6 +29,7 @@ class MyAppState extends ChangeNotifier {
   var tasks = [];
 
   void addTask(var task) {
+    tasks.add(task);
     notifyListeners();
   }
 
