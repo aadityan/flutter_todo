@@ -38,6 +38,7 @@ class MyAppState extends ChangeNotifier {
   }
 
   void completeTask(var task) {
+    task[1] = true;
     notifyListeners();
   }
 }
