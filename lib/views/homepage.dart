@@ -13,8 +13,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
     var tasks = appState.tasks;
-
     var theme = Theme.of(context);
+    FocusNode entryFocus = FocusNode();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -36,9 +37,11 @@ class HomePage extends StatelessWidget {
                       semanticLabel: 'Add Task',
                     ),
                   ),
+                  focusNode: entryFocus,
                   onSubmitted: (task) {
                     appState.addTask([task, false]);
                     clearText();
+                    entryFocus.requestFocus();
                   },
                 ),
                 for (var task in tasks)
