@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/widgets/TaskDisplay.dart';
+import 'package:todo/widgets/appBar.dart';
 import 'package:todo/main.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,10 +18,7 @@ class HomePage extends StatelessWidget {
     FocusNode entryFocus = FocusNode();
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('ToDo App v1.0'),
-      ),
+      appBar: MyAppBar(),
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(MediaQuery.of(context).size.height / 10),

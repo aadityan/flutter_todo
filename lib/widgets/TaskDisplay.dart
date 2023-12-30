@@ -19,7 +19,7 @@ class TaskDisplay extends StatelessWidget {
     return ListTile(
       leading: IconButton(
         icon: Icon(
-          Icons.check,
+          Icons.check_circle_outline,
           semanticLabel: 'Complete Task',
         ),
         color: theme.colorScheme.primary,
