@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/views/homepage.dart';
@@ -45,4 +47,17 @@ class MyAppState extends ChangeNotifier {
     }
     notifyListeners();
   }
+}
+
+class Task {
+  String description;
+  bool completed = false;
+  DateTime created_date;
+  DateTime? completed_date;
+  String? owner;
+
+  Task({
+    required this.description,
+    DateTime? createdDate,
+  }) : this.created_date = createdDate ?? DateTime.now();
 }
