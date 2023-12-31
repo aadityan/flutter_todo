@@ -26,7 +26,10 @@ class CompletedTasks extends StatelessWidget {
             child: ListView(
               children: <Widget>[
                 for (var task in tasks)
-                  if (task.completed) TaskDisplay(theme: theme, task: task),
+                  if (task.completed)
+                    Card(
+                      child: TaskDisplay(theme: theme, task: task),
+                    ),
               ],
             ),
           ),

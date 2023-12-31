@@ -25,19 +25,17 @@ class TaskDisplay extends StatelessWidget {
       trailingString = 'Created on ${formatter.format(task.created_date)}';
     }
 
-    return Card(
-      child: ListTile(
-        leading: IconButton(
-          icon: Icon(
-            Icons.check_circle_outline,
-            semanticLabel: 'Complete Task',
-          ),
-          color: theme.colorScheme.primary,
-          onPressed: () => appState.completeTask(task),
+    return ListTile(
+      leading: IconButton(
+        icon: Icon(
+          Icons.check_circle_outline,
+          semanticLabel: 'Complete Task',
         ),
-        title: Text(task.description),
-        trailing: Text(trailingString),
+        color: theme.colorScheme.primary,
+        onPressed: () => appState.completeTask(task),
       ),
+      title: Text(task.description),
+      trailing: Text(trailingString),
     );
   }
 }
