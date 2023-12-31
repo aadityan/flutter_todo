@@ -36,14 +36,15 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   focusNode: entryFocus,
-                  onSubmitted: (task) {
-                    appState.addTask([task, false]);
+                  onSubmitted: (entry) {
+                    appState.addTask(entry);
                     clearText();
                     entryFocus.requestFocus();
                   },
                 ),
                 for (var task in tasks)
-                  if (task[1] == false) TaskDisplay(theme: theme, task: task),
+                  if (task.completed == false)
+                    TaskDisplay(theme: theme, task: task),
               ],
             ),
           ),

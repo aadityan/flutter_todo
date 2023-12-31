@@ -30,8 +30,9 @@ class MyApp extends StatelessWidget {
 class MyAppState extends ChangeNotifier {
   var tasks = [];
 
-  void addTask(var task) {
-    tasks.add(task);
+  void addTask(var entry) {
+    Task t = Task(description: entry);
+    tasks.add(t);
     notifyListeners();
   }
 
@@ -40,10 +41,12 @@ class MyAppState extends ChangeNotifier {
   }
 
   void completeTask(var task) {
-    if (task[1]) {
-      task[1] = false;
+    if (task.completed) {
+      task.completed = false;
+      task.completed_date = null;
     } else {
-      task[1] = true;
+      task.completed = true;
+      task.completed_date = DateTime.now();
     }
     notifyListeners();
   }
